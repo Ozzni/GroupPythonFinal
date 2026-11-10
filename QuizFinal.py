@@ -7,19 +7,18 @@ Score = 0
 totalQuestions = 5
 Answer = ""
 Q = 0
-QuestionList = ["Q1", "Q2", "Q3", "Q4", "Q5"]
+Q1 = "1+1=? \n A: 2 - B: 11 \n C: 1 - D: 3"
+Q2 = "1-1=? \n A: 2 - B: 0 \n C: 1 - D: 3"
+Q3 = "1*1=? \n A: 2 - B: 11 \n C: 1 - D: 3"
+Q4 = "1/1=? \n A: 2 - B: 11 \n C: 3 - D: 1"
+Q5 = "1^1=? \n A: 1 - B: 11 \n C: 2 - D: 3"
+QuestionList = [Q1, Q2, Q3, Q4, Q5]
 QuestionAnswer = ["A", "B", "C", "D", "A"]
 Name = input("What is your name? ")
 
-#Assignment of actual contents to each question
-QuestionList["Q1"] = "Question One"
-QuestionList["Q2"] = "Question Two"
-QuestionList["Q3"] = "Question Three"
-QuestionList["Q4"] = "Question Four"
-QuestionList["Q5"] = "Question Five"
 
 #Introduces the quiz
-print("[Topic] Quiz - 5 questions")
+print("Math Quiz - 5 questions")
 print()
 
 #question loop
@@ -29,8 +28,8 @@ while Q < totalQuestions:
     print(QuestionList[Q])
     Answer = input("A, B, C, or D? ")
     
-    #validating input
-    while Answer != "A" and "B" and "C" and "D":    #TODO: this currently does not work properly. Make this pass by if ANY of A B C or D are the given answer.
+    #validating input #TODO: this currently only accepts A as valid. Make this pass by if ANY of A B C or D are the given answer.
+    while Answer != "A" and "B" and "C" and "D":
         Answer = input("Invalid answer. Please type A, B, C, or D ")
     
     #check if answer is correct and assign points accordingly
@@ -45,4 +44,4 @@ while Q < totalQuestions:
 
 
 #print final results
-print("Hello, ", Name, "your score is: ", Score, "/", totalQuestions, "!")
+print("Hello,", Name, "your score is:", Score, "/", totalQuestions, "!")
